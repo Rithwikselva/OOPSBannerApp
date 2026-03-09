@@ -1,22 +1,62 @@
 /**
  * OOPSBannerApp
- * UC2 - Print OOPS Banner
+ * UC6 - Static Helper Methods
  * @author Rithwik
- * @version 2.0
+ * @version 6.0
  */
- 
-// UC1 PR correction
 
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(String.join(" *****  ", " ***** ", "  **** ", "      ***** "));
-        System.out.println(String.join("*     * ", "*     * ", "*     * ", "   *      "));
-        System.out.println(String.join("*     * ", "*     * ", "*     * ", "  *       "));
-        System.out.println(String.join("*     * ", "*     * ", "* ****  ", "   *****  "));
-        System.out.println(String.join("*     * ", "*     * ", "*       ", "      *   "));
-        System.out.println(String.join("*     * ", "*     * ", "*       ", "     *    "));
-        System.out.println(String.join(" *****  ", " *****  ", "*   	", " *****    "));
+        String[] o = buildO();
+        String[] p = buildP();
+        String[] s = buildS();
+
+        String[] banner = new String[7];
+
+        for (int i = 0; i < 7; i++) {
+            banner[i] = String.join("  ", o[i], o[i], p[i], s[i]);
+        }
+
+        for (String line : banner) {
+            System.out.println(line);
+        }
+    }
+
+    static String[] buildO() {
+        return new String[]{
+            " ***** ",
+            "*     *",
+            "*     *",
+            "*     *",
+            "*     *",
+            "*     *",
+            " ***** "
+        };
+    }
+
+    static String[] buildP() {
+        return new String[]{
+            " ****  ",
+            "*    * ",
+            "*    * ",
+            "* **** ",
+            "*      ",
+            "*      ",
+            "*      "
+        };
+    }
+
+    static String[] buildS() {
+        return new String[]{
+            " ***** ",
+            "*      ",
+            "*      ",
+            " ***** ",
+            "      *",
+            "      *",
+            " ***** "
+        };
     }
 }
